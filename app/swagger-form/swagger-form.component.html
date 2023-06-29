@@ -1,0 +1,52 @@
+<div class="box-body">
+  <input type="file" (change)="onChange($event)" />
+  <hr class="line" />
+  <h3>Request</h3>
+  <hr class="line" />
+  <form novalidate #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>URL</label>
+        <input
+          type="text"
+          class="form-control"
+          name="url"
+          [(ngModel)]="url"
+          #urlRef="ngModel"
+        />
+      </div>
+      <div class="col-sm-6 form-group">
+        <label>Header Parameters</label>
+        <input
+          type="text"
+          class="form-control"
+          name="header"
+          [(ngModel)]="header"
+          #headerRef="ngModel"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label>Request Parameters/Body</label>
+        <input
+          type="text"
+          class="form-control"
+          name="body"
+          [(ngModel)]="requestBody"
+          #bodyRef="ngModel"
+        />
+      </div>
+      <div class="col-sm-6 form-group">
+        <label>Required Parameters</label>
+        <input
+          type="text"
+          class="form-control"
+          name="id"
+          [(ngModel)]="requiredParameter"
+          #idRef="ngModel"
+        />
+      </div>
+    </div>
+  </form>
+</div>
